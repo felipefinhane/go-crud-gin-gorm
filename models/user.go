@@ -1,6 +1,6 @@
 package models
 
-import "git@github.com/felipefinhane/go-crud-gin-gorm.git/config"
+import "github.com/felipefinhane/go-crud-gin-gorm/config"
 
 //Fetch all user data
 func GetAllUsers(user *[]User) error {

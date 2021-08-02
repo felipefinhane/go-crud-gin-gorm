@@ -1,4 +1,4 @@
-module git@github.com/felipefinhane/go-crud-gin-gorm.git
+module github.com/felipefinhane/go-crud-gin-gorm
 
 go 1.16
 

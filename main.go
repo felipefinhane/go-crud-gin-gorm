@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 
-	"git@github.com/felipefinhane/go-crud-gin-gorm.git/config"
-	"git@github.com/felipefinhane/go-crud-gin-gorm.git/models"
-	"git@github.com/felipefinhane/go-crud-gin-gorm.git/routes"
+	"github.com/felipefinhane/go-crud-gin-gorm/config"
+	"github.com/felipefinhane/go-crud-gin-gorm/models"
+	"github.com/felipefinhane/go-crud-gin-gorm/routes"
 )
 
 func main() {
