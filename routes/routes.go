@@ -1,6 +1,10 @@
 package routes
 
-import "github.com/gin-gonic/gin"
+import (
+	"github.com/felipefinhane/go-crud-gin-gorm/controllers"
+
+	"github.com/gin-gonic/gin"
+)
 
 //configure routes
 func SetupRouter() *gin.Engine {

@@ -4,6 +4,8 @@ import (
 	"fmt"
 	"net/http"
 
+	"github.com/felipefinhane/go-crud-gin-gorm/models"
+
 	"github.com/gin-gonic/gin"
 )
 
@@ -15,7 +17,7 @@ func GetUsers(c *gin.Context) {
 	if err != nil {
 		c.AbortWithStatus(http.StatusInternalServerError)
 	} else {
-		c.Json(http.StatusOK, user)
+		c.JSON(http.StatusOK, user)
 	}
 }
 
@@ -24,7 +26,7 @@ func GetUserByID(c *gin.Context) {
 	id := c.Params.ByName("id")
 	var user models.User
 
-	err := models.GetUSerByID(&user, id)
+	err := models.GetUserByID(&user, id)
 	if err != nil {
 		c.AbortWithStatus(http.StatusNotFound)
 	} else {
@@ -36,7 +38,7 @@ func GetUserByID(c *gin.Context) {
 func CreateUser(c *gin.Context) {
 	var user models.User
 
-	c.BindJson(&user)
+	c.BindJSON(&user)
 	err := models.CreateUser(&user)
 	if err != nil {
 		fmt.Println(err.Error())
@@ -47,7 +49,7 @@ func CreateUser(c *gin.Context) {
 }
 
 //Update the user information
-func Updateuser(c *gin.Context) {
+func UpdateUser(c *gin.Context) {
 	id := c.Params.ByName("id")
 	var user models.User
 
@@ -71,7 +73,7 @@ func DeleteUser(c *gin.Context) {
 	id := c.Params.ByName("id")
 	var user models.User
 
-	err := models.DeleteUSer(&user, id)
+	err := models.DeleteUser(&user, id)
 	if err != nil {
 		c.AbortWithStatus(http.StatusInternalServerError)
 	} else {
